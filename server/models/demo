@@ -1,0 +1,94 @@
+db.biditems.insertMany([
+  {
+    title: "Vintage Pearl Necklace",
+    description: "Celebrate summer’s bold beauty with these radiant pearls",
+    image:
+      "https://images.unsplash.com/photo-1752035680973-79d3836f317a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D",
+    category: "jewellery",
+    price: 1200,
+    createdAt: "2025-07-10T09:15:00Z",
+  },
+  {
+    title: "Ruby Statement Ring",
+    description: "Fiery red ruby set in 18k gold",
+    image:
+      "https://plus.unsplash.com/premium_photo-1752015804038-f5f68d8d94cf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIwfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D",
+    category: "jewellery",
+    price: 3500,
+    createdAt: "2025-07-12T14:30:00Z",
+  },
+  {
+    title: "Retro Gaming Console",
+    description: "1990s classic gaming system, fully restored",
+    image:
+      "https://images.unsplash.com/photo-1750779940886-edfa73b5c5c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI3fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D",
+    category: "tech",
+    price: 450,
+    createdAt: "2025-07-05T11:20:00Z",
+  },
+  {
+    title: "Cubism-Inspired Painting",
+    description: "Modern reinterpretation of classic cubist style",
+    image:
+      "https://images.unsplash.com/photo-1750779940886-edfa73b5c5c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI3fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D",
+    category: "art",
+    price: 7800,
+    createdAt: "2025-07-15T16:45:00Z",
+  },
+  {
+    title: "Vintage Racing Chronograph",
+    description: "1960s motorsport watch with original box",
+    image:
+      "https://images.unsplash.com/photo-1750711642160-efc6e052751a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMwfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D",
+    category: "wat",
+    price: 12500,
+    createdAt: "2025-07-01T10:00:00Z",
+  },
+  {
+    title: "Peridot Earrings",
+    description: "Sunlit peridot stones in delicate gold settings",
+    image:
+      "https://images.unsplash.com/photo-1750711642160-efc6e052751a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMwfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D",
+    category: "jewellery",
+    price: 950,
+    createdAt: "2025-07-08T13:10:00Z",
+  },
+]);
+
+db.slides.insertMany([
+  {
+    title: "Summer Jewellery",
+    subtitle: "Collection",
+    description:
+      "Celebrate summer’s bold beauty with radiant pearls, fiery rubies, and sunlit peridot.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1750604543641-a9396d17e69b?w=600&auto=format&fit=crop&q=60",
+    slug: "jewellery", // Matches your nav menu
+  },
+  {
+    title: "Retro Tech",
+    subtitle: "Collection",
+    description: "Travel back to the future with iconic tech nostalgia.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1751470114909-4f20df5cbd81?w=600&auto=format&fit=crop&q=60",
+    slug: "tech",
+  },
+  {
+    title: "Racing Watches",
+    subtitle: "Auction",
+    description:
+      "Celebrate the enduring connection between watchmaking and motorsport.",
+    image:
+      "https://images.unsplash.com/photo-1751606973289-18652a0cfdb9?w=600&auto=format&fit=crop&q=60",
+    slug: "wat",
+  },
+  {
+    title: "Re-imagining the",
+    subtitle: "Classics Collection",
+    description:
+      "A selection of contemporary art inspired by Impressionism, Cubism, and Symbolism.",
+    image:
+      "https://images.unsplash.com/photo-1751606973289-18652a0cfdb9?w=600&auto=format&fit=crop&q=60",
+    slug: "art",
+  },
+]);
