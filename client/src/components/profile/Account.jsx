@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-import axios from "axios";
+import axiosInstance from "../../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 
 export default function Account() {
@@ -66,15 +66,11 @@ export default function Account() {
 
       // console.log(payload);
 
-      const res = await axios.put(
-        "http://localhost:5000/api/users/account",
-        payload,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const res = await axiosInstance.put("/api/users/account", payload, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       setUser(res.data);
       navigate("/profile/setting/addresses"); // go to next step

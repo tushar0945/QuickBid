@@ -45,27 +45,3 @@ export default function ProfileRedirect() {
     return <Navigate to="/profile/details" replace />;
   }
 }
-
-// // src/components/auth/ProfileRedirect.jsx
-// import { Navigate } from "react-router-dom";
-// import { useAuth } from "../../context/AuthContext";
-
-// export default function ProfileRedirect() {
-//   const {
-//     hasCompletedProfileSetup,
-//     hasVisitedProfile,
-//     setHasVisitedProfile,
-//   } = useAuth();
-
-//   useEffect(() => {
-//     if (!hasVisitedProfile) {
-//       setHasVisitedProfile(true);
-//     }
-//   }, []);
-
-//   if (!hasCompletedProfileSetup) {
-//     return <Navigate to="/profile/setting/account" replace />;
-//   }
-
-//   return <Navigate to="/profile/details" replace />;
-// }

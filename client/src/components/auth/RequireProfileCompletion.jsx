@@ -1,8 +1,9 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-export default function RequireProfileCompletion() {
+export default function RequireProfileCompletion({ children }) {
   const { hasCompletedProfileSetup, user } = useAuth();
+
   // 🚫 Block if not logged in
   if (!user) {
     return <Navigate to="/login" replace />;
@@ -10,15 +11,18 @@ export default function RequireProfileCompletion() {
 
   // 🚫 Block if admin or seller role
   if (user.role === "admin") {
-    return <Navigate to="/admin/dashboard" replace />; // or another page if you prefer
+    return <Navigate to="/admin/dashboard" replace />;
   }
 
   if (user.role === "seller") {
-    return <Navigate to="/seller/dashboard" replace />; // or another page if you prefer
+    return <Navigate to="/seller/dashboard" replace />;
   }
+
+  // 🚫 Block if profile not completed
   if (!hasCompletedProfileSetup) {
     return <Navigate to="/profile/setting/account" replace />;
   }
 
-  return <Outlet />; // renders nested profile routes if profile is complete
+  // ✅ Otherwise, render whatever was passed inside
+  return children;
 }

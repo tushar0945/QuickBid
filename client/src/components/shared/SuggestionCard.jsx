@@ -1,23 +1,3 @@
-// import React from "react";
-
-// export default function SuggestionCard({ item }) {
-//   return (
-//     <div className="min-w-[250px] max-w-[250px] bg-white shadow rounded mr-4">
-//       <img
-//         src={item.image}
-//         alt={item.title}
-//         className="w-full h-40 object-cover rounded-t"
-//       />
-//       <div className="p-3">
-//         <h3 className="text-sm font-semibold">{item.title}</h3>
-//         <p className="text-xs text-gray-500">{item.details}</p>
-//         <p className="text-sm mt-2 font-bold">€{item.price}</p>
-//         <p className="text-xs text-gray-400">{item.timeLeft}</p>
-//       </div>
-//     </div>
-//   );
-// }
-
 import React from "react";
 
 export default function SuggestionCard({ item }) {

@@ -1,57 +1,6 @@
-// // src/pages/seller/BecomeSeller.jsx
-// import { useState } from "react";
-// import { useAuth } from "../../context/AuthContext";
-// import axios from "axios";
-
-// export default function BecomeSeller() {
-//   const { user, setUser } = useAuth();
-//   const [businessName, setBusinessName] = useState("");
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       const res = await axios.post(
-//         "/api/users/become-seller",
-//         { businessName },
-//         {
-//           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-//         }
-//       );
-
-//       // Update context
-//       setUser({ ...user, role: "seller", businessName });
-//       alert("You are now a seller!");
-//     } catch (error) {
-//       console.error(error);
-//       alert("Error becoming a seller.");
-//     }
-//   };
-
-//   return (
-//     <div className="p-4">
-//       <h2 className="text-2xl font-bold mb-4">Become a Seller</h2>
-//       <form onSubmit={handleSubmit} className="space-y-4">
-//         <input
-//           type="text"
-//           placeholder="Business Name"
-//           value={businessName}
-//           onChange={(e) => setBusinessName(e.target.value)}
-//           className="border p-2 w-full"
-//           required
-//         />
-//         <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-//           Submit
-//         </button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// src/pages/seller/BecomeSeller.jsx
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-import axios from "axios";
+import axiosInstance from "../../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 
 export default function BecomeSeller() {
@@ -63,7 +12,7 @@ export default function BecomeSeller() {
     e.preventDefault();
 
     try {
-      await axios.post(
+      await axiosInstance.post(
         "/api/users/become-seller",
         { businessName },
         {
