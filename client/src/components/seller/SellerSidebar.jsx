@@ -33,6 +33,15 @@ export default function SellerSidebar() {
         <div className="font-semibold hidden lg:block">PRODUCTS</div>
 
         <NavLink
+          to="/seller/auction/new"
+          className={({ isActive }) =>
+            `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`
+          }
+        >
+          <FaBoxOpen size={20} />
+          <span className="hidden lg:inline">Add Bid Item</span>
+        </NavLink>
+        <NavLink
           to="/seller/listings"
           className={({ isActive }) =>
             `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`

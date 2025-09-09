@@ -14,7 +14,7 @@ export default function Product() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const { data } = await axiosInstance.get(`/bids/product/${id}`);
+        const { data } = await axiosInstance.get(`/api/bids/product/${id}`);
         setProduct(data);
       } catch (err) {
         console.error("Error fetching product:", err);

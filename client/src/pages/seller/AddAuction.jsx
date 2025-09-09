@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../api/axiosInstance"; // adjust path
 
 // ✅ Custom overlay component
 const SubmittingOverlay = () => (
@@ -81,7 +82,7 @@ export default function AddItemForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true); // Show overlay
+    setIsSubmitting(true);
 
     try {
       const form = new FormData();
@@ -92,26 +93,18 @@ export default function AddItemForm() {
       }
       formData.images.forEach((file) => form.append("images", file));
 
-      const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/seller/bids/add", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}` },
-        body: form,
-      });
+      // ✅ Axios instance handles token and JSON automatically
+      const response = await axiosInstance.post("/api/seller/bids/add", form);
 
-      const contentType = res.headers.get("content-type");
-      const data = contentType?.includes("application/json")
-        ? await res.json()
-        : await res.text();
-
-      if (!res.ok) throw new Error(data.message || "Something went wrong");
-
-      navigate("/"); // redirect after success
+      // Success check
+      if (response.status === 200 || response.status === 201) {
+        navigate("/");
+      }
     } catch (err) {
       console.error(err);
-      alert(err.message);
+      alert(err.response?.data?.message || err.message);
     } finally {
-      setIsSubmitting(false); // Hide overlay
+      setIsSubmitting(false);
     }
   };
 
