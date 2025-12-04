@@ -25,7 +25,7 @@ import.meta.env.VITE_API_URL ||
 //const API_URL = "http://localhost:5000";
 
 const axiosInstance = axios.create({
-  baseURL: `${API_URL}`, // Automatically uses correct base URL
+  baseURL: `${VITE_API_URL}`, // Automatically uses correct base URL
   headers: {
     "Content-Type": "application/json",
   },
